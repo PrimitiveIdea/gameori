@@ -1,0 +1,43 @@
+.game-title,.game-short-desc{
+	font-size: 5em;
+	font-style: italic;
+	font-weight: bold;
+}
+.game-short-desc{
+	font-size: 1em;
+	color:grey;
+}
+.game-row-img-desc{
+	font-size: 15px;
+	height:auto;
+	background: green;
+	font-weight: bold;
+}
+.minimum-req-text,.recommended-req-text,.vs-text-big{
+	font-style: italic;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color:yellow;
+}
+.minimum-req,.recommended-req,.vs-text{
+	padding:10px 10px;
+	color:white;	
+	background: red;
+	font-size: 15px;
+	-webkit-transition: background 2s;
+    transition: background 1s;
+}
+.minimum-req{
+	background: red;
+}
+.recommended-req{
+	background: green;
+}
+.vs-text{
+	background: black;
+	text-align: center;
+}
+.minimum-req:hover,.recommended-req:hover{
+	background: brown;
+}

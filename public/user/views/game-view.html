@@ -1,0 +1,57 @@
+<div class="container">
+		<div class="row">
+			<span class="game-title">Title of The Game</span><br>
+			<span class="game-short-desc">The short Description for the game</span>
+		</div>
+		<div class="row game-row-img-desc">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="background:red;">
+					IMAGE
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="background:yellow;">
+					Description of the game including:<br>
+					Title<br>
+					Stars from reviewers<br>
+					Game Tag<br>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 minimum-req">
+					<div class="minimum-req-text col-lg-12 col-md-12 col-sm-12 col-xs-12">Minimum Requirement:</div><br><hr>
+					Processor: {{ game_min.processor }}<br>
+					Memory: {{ game_min.memory }}<br>
+					VGA: {{ game_min.vga }}<br>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 vs-text">
+					<div class="vs-text-big col-lg-12 col-md-12 col-sm-12 col-xs-12">VS</div><br><hr>
+					<div class="vs-text-small col-lg-12 col-md-12 col-sm-12 col-xs-12">VS</div><br>
+					<div class="vs-text-small col-lg-12 col-md-12 col-sm-12 col-xs-12">VS</div><br>
+					<div class="vs-text-small col-lg-12 col-md-12 col-sm-12 col-xs-12">VS</div><br>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 recommended-req">
+					<div class="recommended-req-text col-lg-12 col-md-12 col-sm-12 col-xs-12">Recommended Requirement:</div><br><hr>
+					Processor: {{ game_rec.processor }}<br>
+					Memory: {{ game_rec.memory }}<br>
+					VGA: {{ game_rec.vga }}<br>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+		</div><br>
+		<div class="row" style="background:red;">
+			Reviewwww!!!
+		</div><br>
+		<div class="row">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5"></div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="background:red;">
+				Buy it at amazon
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5"></div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+	</script>
