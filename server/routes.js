@@ -1,25 +1,11 @@
 var routes;
-var Todo = require('../models/todo');
+var indexController = require('./user/controllers/index');
 
-function getTodos(res) {
-    Todo.find(function (err, todos) {
-
-        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-        if (err) {
-            res.send(err);
-        }
-
-        res.json(todos); // return all todos in JSON format
-    });
-};
-
+// api ===============================================================
 routes = function (app) {
-
-    // api ---------------------------------------------------------------------
     // get all todos
     app.get('/api/todos', function (req, res) {
-        // use mongoose to get all todos in the database
-        getTodos(res);
+        indexController.getTodos(res);
     });
 
     // create todo and send back all todos after creation
@@ -53,7 +39,7 @@ routes = function (app) {
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
-        res.sendFile(__base + '/public/views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+        res.sendFile(__base + '/public/user/views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
 };
 
