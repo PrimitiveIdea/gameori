@@ -9,6 +9,10 @@ gameoriModel = mongoose.model('gameori', {
         type: String,
         default: ''
     }
+    user: {
+    	type: Object,
+    	default: {}
+    } 
 });
 
 var getTodos = function () {

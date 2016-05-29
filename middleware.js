@@ -2,7 +2,7 @@
 
 // declaration =================================================================
 var middleware;
-var router = require(__base + '/server/routes.js'); // router
+var routes = require(__base + '/server/routes.js'); // routes
 var express = require('express');
 var morgan = require('morgan'); // log to console
 var bodyParser = require('body-parser'); // parser
@@ -10,7 +10,7 @@ var methodOverride = require('method-override');
 
 // middleware configuration ====================================================
 middleware = function (app){
-	router(app);
+	routes(app);
 	app.use(express.static(__dirname + '/public')); // set the static files location
 	app.use(morgan('dev')); // log every request to the console
 	app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
