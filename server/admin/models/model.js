@@ -9,10 +9,6 @@ gameoriModel = mongoose.model('gameori', {
         type: String,
         default: ''
     }
-    user: {
-    	type: Object,
-    	default: {}
-    } 
 });
 
 var getTodos = function () {
@@ -21,10 +17,22 @@ var getTodos = function () {
     });
 };
 
+var createTodos = function () {
+	gameoriModel.create({
+        text: req.body.text,
+        done: false
+    }, function (err, todo) {
+        if (err)
+            res.send(err);
 
+        // get and return all the todos after you create another
+        getTodos(res);
+    });
+}
 
 model = {
-	getTodos : getTodos
+	getTodos : getTodos,
+	createTodos : createTodos
 }
 
 module.exports = model;
