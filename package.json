@@ -1,7 +1,7 @@
 {
   "name": "Gameori",
+  "description": "Website for review and promotion of the original game",
   "version": "0.0.1",
-  "description": "Review and promote games",
   "main": "server.js",
   "author": "webmikro",
   "dependencies": {

@@ -1,0 +1,26 @@
+{
+  "name": "Gameori",
+  "description": "Website for review and promotion of the original game",
+  "main": "server.js",
+  "authors": [
+    "webmikro"
+  ],
+  "license": "unlicense",
+  "keywords": [
+    "gameori"
+  ],
+  "homepage": "https://github.com/webmikro/gameori",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular": "^1.5.6",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}
