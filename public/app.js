@@ -1,4 +1,11 @@
 'use strict'
 
 // register all modules
-angular.module('gameori', ['ngRoute', 'appRoutes', 'indexModule', 'indexService']);
+angular.module('gameori', [
+	'ngRoute', 
+	'appRoutes', 
+	'mainModule', 
+	'mainService', 
+	'gameproductService',
+	'gameproductService',
+	'gameproductModule']);

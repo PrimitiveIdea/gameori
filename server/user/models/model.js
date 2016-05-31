@@ -21,10 +21,15 @@ var getTodos = function () {
     });
 };
 
+var getGameProduct = function(gameTitle){
+    var gameData = gameoriModel.find({ title : gameTitle });
+    return gameData;
+}
 
 
 model = {
-	getTodos : getTodos
+	getTodos : getTodos,
+    getGameProduct : getGameProduct
 }
 
 module.exports = model;

@@ -5,7 +5,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     $routeProvider
         .when('/', { // homepage
             templateUrl: '../user/views/index.html',
-            controller: 'indexController'
+            controller: 'mainController'
         })
+        .when('/game/:gametitle', { 
+            templateUrl: '../user/views/game-view.html',
+            controller: 'gameproductController'
+        })
+
     $locationProvider.html5Mode(true);
 }]);

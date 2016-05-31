@@ -7,8 +7,15 @@ var getTodos = function (res){
 		res.send(model.err);
 	}
 	res.json(model.todos);
-}
+};
 
+var getGameProduct = function (res){
+	var gameData = gameoriModel.getGameProduct();
+	if (gameData.err){
+		res.send(model.err);
+	}
+	res.json(gameData.gameData);
+};
 indexController = {
 	getTodos : getTodos
 };
