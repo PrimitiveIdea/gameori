@@ -22,9 +22,10 @@ var getTodos = function () {
 };
 
 var getGameProduct = function(gameTitle){
-    var gameData = gameoriModel.find({ title : gameTitle });
-    return gameData;
-}
+    gameoriModel.find({ title : gameTitle },function(err,gameData){
+        return {err, gameData};
+    });
+};
 
 
 model = {

@@ -9,15 +9,16 @@ var getTodos = function (res){
 	res.json(model.todos);
 };
 
-var getGameProduct = function (res){
-	var gameData = gameoriModel.getGameProduct();
+var getGameProduct = function (req, res){
+	var gameData = gameoriModel.getGameProduct(req);
 	if (gameData.err){
 		res.send(model.err);
 	}
 	res.json(gameData.gameData);
 };
 indexController = {
-	getTodos : getTodos
+	getTodos : getTodos,
+	getGameProduct : getGameProduct
 };
 
 module.exports = indexController;

@@ -1,0 +1,30 @@
+commit 63844983369a856bca9b938080de14ee72e73d3e
+Author: tommycuang <tommy_cuang@yahoo.co.id>
+Date:   Tue May 31 22:13:31 2016 +0700
+
+    Building backend for Game Product pages
+
+commit 5e7921cd471686c40032767f5e1a0e6625648c53
+Author: mustafa225 <mustafalim225@gmail.com>
+Date:   Mon May 30 07:21:57 2016 +0700
+
+    edit readme.md
+
+commit 0074df1f2b3f8fe4ed39bc8c720eb6610f00021b
+Author: mustafa225 <mustafalim225@gmail.com>
+Date:   Mon May 30 07:17:16 2016 +0700
+
+    edit readme.md
+
+commit 5dc629d64e3fd1d6e384fba5aa8e5dd881ae8174
+Merge: 5ca4621 27e241c
+Author: mustafa225 <mustafalim225@gmail.com>
+Date:   Mon May 30 06:18:25 2016 +0700
+
+    Merge branch 'master' of https://github.com/webmikro/gameori
+
+commit 5ca4621e80ed57e083c3294a2b06486ae6d34bb8
+Author: mustafa225 <mustafalim225@gmail.com>
+Date:   Mon May 30 06:17:34 2016 +0700
+
+    repository synchronization

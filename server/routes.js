@@ -12,7 +12,7 @@ routes = function (app) {
     app.get('/api/game/:game_title', function (req, res) {
 
         // create a todo, information comes from AJAX request from Angular
-        indexController.getGameProduct(req.params.game_title);
+        indexController.getGameProduct(req.params.game_title,res);
 
     });
 
