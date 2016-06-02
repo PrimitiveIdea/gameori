@@ -7,5 +7,6 @@ angular.module('gameori', [
 	'mainModule',
 	'mainService',
 	'gameproductService',
-	'gameproductService',
-	'gameproductModule']);
+	'gameproductModule',
+	'adminModule',
+	'adminService']);
