@@ -1,11 +1,19 @@
-angular.module('mainModule', [])
+angular.module('adminModule', [])
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
-		$scope.formData = {};
-		$scope.loading = true;
-
-		// GET =====================================================================
+	.controller('adminController', ['$scope','$http','admin', function($scope, $http, admin) {
+		
+		$scope.formLoginData = {};
+		$scope.Login = function(){
+			if($scope.formLoginData.username != "" && $scope.formLoginData.password != ""){
+				admin.get()
+					.success(function(data){
+						$scope.username = data.username;
+						$scope.password = data.password;
+					});
+			}
+		};
+		/*// GET =====================================================================
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
 		Todos.get()
@@ -46,5 +54,5 @@ angular.module('mainModule', [])
 					$scope.loading = false;
 					$scope.todos = data; // assign our new list of todos
 				});
-		};
+		};*/
 	}]);

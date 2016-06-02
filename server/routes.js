@@ -1,5 +1,6 @@
 var routes;
 var indexController = require('./user/controllers/index');
+//var adminController = require('./admin/controllers/index');
 
 // api ===============================================================
 routes = function (app) {
@@ -28,8 +29,14 @@ routes = function (app) {
         });
     });
 
+    app.get('/api/admin',function(req, res){
+        res.status(200).json({'username' : 'tommy', 'password' : '12345'});
+    });
     // base page
-    app.get('*', function (req, res) {
+    app.get('/admin', function (req, res) {
+        res.sendFile(__base + '/public/admin/views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
+    app.get('/', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
 };

@@ -8,7 +8,7 @@ gameoriModel = mongoose.model('gameori', {
     text: {
         type: String,
         default: ''
-    }
+    },
     user: {
     	type: Object,
     	default: {}
