@@ -2,10 +2,10 @@
 
 // register all modules
 angular.module('gameori', [
-	'ngRoute', 
-	'appRoutes', 
-	'mainModule', 
-	'mainService', 
+	'ngRoute',
+	'appRoutes',
+	'mainModule',
+	'mainService',
 	'gameproductService',
 	'gameproductService',
 	'gameproductModule']);

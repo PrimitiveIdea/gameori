@@ -1,0 +1,28 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="gameori">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Gameori</title>
+
+	<!-- STYLE -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+	<!-- SCRIPT -->
+	<script src="../../../bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="controllers/mainController.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/dist/js/bootstrap.js"></script>
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<!-- SET THE VIEW FOR TEMPLATING -->
+	<div ng-view>
+	</div>
+</body>
+</html>
