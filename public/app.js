@@ -4,9 +4,4 @@
 angular.module('gameori', [
 	'ngRoute',
 	'appRoutes',
-	'mainModule',
-	'mainService',
-	'gameproductService',
-	'gameproductModule',
-	'adminModule',
-	'adminService']);
+	'mainModule']);

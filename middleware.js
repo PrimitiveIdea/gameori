@@ -11,7 +11,8 @@ var methodOverride = require('method-override');
 // middleware configuration ====================================================
 middleware = function (app){
 	routes(app);
-	app.use(express.static(__dirname + '/public')); // set the static files location
+	app.use("/public", express.static(__dirname + "/public")); // set the static files location
+	app.use("/vendor", express.static(__dirname + "/bower_components")); // set the static vendor location
 	app.use(morgan('dev')); // log every request to the console
 	app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
 	app.use(bodyParser.json()); // parse application/json
