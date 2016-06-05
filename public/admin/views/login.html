@@ -29,8 +29,28 @@
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="adminController">
-	<div ng-view>
+	<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4"></div>
+		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4 login-bar">Login</div>
+		<div class="col-lg-4 col-sm-4 col-md-4 col-xs-4"></div>
 	</div>
+	<div id="form-login" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form action="/enter" method="post">
+					<div class="form-group">
 
+						<!-- BIND THIS VALUE TO formLoginData IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="Username" name="username">
+						<input type="password" class="form-control input-lg text-center" placeholder="Password" name="password">
+					</div>
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+				</form>
+			</div>
+		</div>
+		{{ username }} {{ password }}
+</div>
 </body>
 </html>

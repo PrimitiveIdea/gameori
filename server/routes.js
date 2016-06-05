@@ -1,9 +1,24 @@
 var routes;
 var indexController = require('./user/controllers/index');
-//var adminController = require('./admin/controllers/index');
-
+var adminController = require('./admin/controllers/admin-controller');
+var bodyParser = require('body-parser'); // parser
+var session = require('express-session');
 // api ===============================================================
+var auth = function(req, res, next) {
+  if (req.session && req.session.username === "tommy" && req.session.admin)
+    return next();
+  else
+    return res.sendStatus(401);
+};
 routes = function (app) {
+    app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
+    app.use(bodyParser.json()); // parse application/json
+    app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
+    app.use(session({
+        secret: '2C44-4D44-WppQ38S',
+        resave: true,
+        saveUninitialized: true
+    }));
     // get all todos
     app.get('/api/todos', function (req, res) {
         indexController.getTodos(res);
@@ -33,8 +48,41 @@ routes = function (app) {
         res.status(200).json({'username' : 'tommy', 'password' : '12345'});
     });
     // base page
-    app.get('/admin', function (req, res) {
+    app.get('/admin', auth, function (req, res) {
         res.sendFile(__base + '/public/admin/views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
+    app.get('/login', function (req, res) {
+        res.sendFile(__base + '/public/admin/views/login.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
+    app.post('/enter', function (req, res) {
+        if (!req.body.username || !req.body.password) {
+            res.send('login failed');    
+        } 
+        else{
+            /*var temp = adminController.findPassword(req.body.username).exec(function(err,data){
+                if(err)
+                  res.send(err);
+                else{
+                    if(!data){
+                        res.send(401);
+                    }
+                    else if(data.password === req.body.password){
+                        req.session.username = req.body.username;
+                        req.session.admin = true;
+                        res.redirect('/admin');    
+                    }
+                    else
+                    res.send(401);                
+                }
+                
+            });*/
+            if(req.body.username === "tommy" && req.body.password === "tommycuang"){
+                req.session.username = req.body.username;
+                req.session.admin = true;
+                res.redirect('/admin');    
+            }
+            else res.send(401);
+        }
     });
     app.get('/', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html'); // load the single view file (angular will handle the page changes on the front-end)
