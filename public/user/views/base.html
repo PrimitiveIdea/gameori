@@ -3,29 +3,30 @@
 <!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="gameori">
 <head>
-	<!-- META -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>Gameori</title>
+    <title>Gameori</title>
 
-	<!-- STYLE VENDOR-->
-	<link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css">
+    <!-- STYLE VENDOR-->
+    <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css">
 
-	<!-- SCRIPT VENDOR-->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-	<script src="./vendor/jquery/dist/jquery.js"></script>
+    <!-- SCRIPT VENDOR-->
+    <script src="./vendor/angular/angular.js"></script>
+    <script src="./vendor/angular-route/angular-route.js"></script>
+    <script src="./vendor/jquery/dist/jquery.js"></script>
     <script src="./vendor/bootstrap/dist/js/bootstrap.js"></script>
 
+    <!-- SCRIPT -->
     <script src="./public/user/controllers/mainController.js"></script>
-    <script src="./public/user/user-routes.js"></script>
-    <script src="./public/user/user-app.js"></script>
+    <script src="./public/user/routes.js"></script>
+    <script src="./public/user/app.js"></script>
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
-	<!-- SET THE VIEW FOR TEMPLATING -->
-	<div ng-view>
-	</div>
+    <!-- SET THE VIEW FOR TEMPLATING -->
+    <div ng-view>
+    </div>
 </body>
 </html>
