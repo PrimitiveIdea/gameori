@@ -56,7 +56,8 @@ routes = function (app) {
     });
     app.post('/enter', function (req, res) {
         if (!req.body.username || !req.body.password) {
-            res.send('login failed');    
+            //res.send('login failed'); 
+            res.redirect('/login');
         } 
         else{
             /*var temp = adminController.findPassword(req.body.username).exec(function(err,data){
