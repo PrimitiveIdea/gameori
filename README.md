@@ -44,3 +44,7 @@ $ [sudo] npm install -g bower
 ## Sources
 1. [Node Todo App](https://github.com/scotch-io/node-todo)
 2. [MEAN Stack on OpenShift](https://github.com/linnovate/mean-on-openshift)
+
+## Branch
+git pull origin master
+git push origin [branch]
