@@ -1,4 +1,4 @@
-angular.module('adminService', [])
+angular.module('mainService', [])
 
 	// super simple service
 	// each function returns a promise object 

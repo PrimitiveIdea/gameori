@@ -1,0 +1,31 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="gameori">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Gameori - Admin Area</title>
+
+    <!-- STYLE VENDOR-->
+    <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/admin/res/css/main.css">
+    <!-- SCRIPT VENDOR-->
+    <script src="./vendor/angular/angular.js"></script>
+    <script src="./vendor/angular-route/angular-route.js"></script>
+    <script src="./vendor/jquery/dist/jquery.js"></script>
+    <script src="./vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- SCRIPT -->
+    <script src="./public/admin/controllers/mainController.js"></script>
+    <script src="./public/admin/routes.js"></script>
+    <script src="./public/admin/app.js"></script>
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+    <!-- SET THE VIEW FOR TEMPLATING -->
+    <div ng-view>
+    </div>
+</body>
+</html>

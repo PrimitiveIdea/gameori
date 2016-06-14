@@ -1,11 +1,12 @@
 'user strict'
 
 // declaration =================================================================
-var mongoose = require('mongoose'); // mongoose for mongodb
+var mongoose = require('mongoose');
+var database;
 
 // database connection =========================================================
-database = function(defaultConfig){
-	mongoose.connect(defaultConfig.db); // connect to MongoDB instance
+database = function(defaultConfig) {
+    mongoose.connect(defaultConfig.db);
 }
 
 module.exports = database;

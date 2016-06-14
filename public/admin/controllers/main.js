@@ -1,8 +1,7 @@
-angular.module('adminModule', [])
+angular.module('mainModule', [])
 
 	// inject the Todo service factory into our controller
-	.controller('adminController', ['$scope','$http','admin', function($scope, $http, admin) {
-		
+	.controller('mainController', ['$scope','$http','admin', function($scope, $http, admin) {
 		$scope.formLoginData = {};
 		$scope.Login = function(){
 			if($scope.formLoginData.username != "" && $scope.formLoginData.password != ""){
