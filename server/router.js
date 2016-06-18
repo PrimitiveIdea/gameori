@@ -1,5 +1,5 @@
 // controller declaration ============================================
-var indexController = require('./user/controllers/index');
+var singleGameController = require('./user/controllers/singleGameController');
 var loginController = require('./admin/controllers/loginController')
 var router;
 
@@ -25,9 +25,8 @@ router = function (app) {
 
     // api ================================================================
     app.get('/api/game/:game_title', function (req, res) {
-        indexController.getGameProduct(req.params.game_title,res);
+       singleGameController.getsingleGame(req.params.game_title,res);
     });
-
     // user page ==========================================================
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');
