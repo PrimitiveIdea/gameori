@@ -23,16 +23,16 @@ router = function (app) {
         res.sendFile(__base + '/public/admin/views/index.html');
     });
 
-    // user page ==========================================================
-    app.get('/', function (req, res) {
-        res.sendFile(__base + '/public/user/views/base.html');
-    });
 
     // api ================================================================
     app.get('/api/game/:game_title', function (req, res) {
         indexController.getGameProduct(req.params.game_title,res);
     });
 
+    // user page ==========================================================
+    app.get('*', function (req, res) {
+        res.sendFile(__base + '/public/user/views/base.html');
+    });
     // delete a todo
     // app.delete('/api/todos/:todo_id', function (req, res) {
     //     Todo.remove({
