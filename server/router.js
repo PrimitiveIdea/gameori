@@ -27,7 +27,9 @@ router = function (app) {
     app.get('/api/game/:game_title', function (req, res) {
         indexController.getGameProduct(req.params.game_title,res);
     });
-
+    app.get('/api/game/:game_comment', function (req, res) {
+        indexController.getGameComment(req.params.game_comment,res);
+    });
     // user page ==========================================================
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');

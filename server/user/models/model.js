@@ -27,10 +27,17 @@ var getGameProduct = function(gameTitle){
     });
 };
 
+var getGameComment = function(user){
+    gameoriModel.find({id : user}, function(err,gameData){
+        return {err, gameData};
+    });
+}
+
 
 model = {
 	getTodos : getTodos,
-    getGameProduct : getGameProduct
+    getGameProduct : getGameProduct,
+    getGameComment : getGameComment
 }
 
 module.exports = model;

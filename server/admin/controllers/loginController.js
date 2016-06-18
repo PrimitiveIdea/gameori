@@ -6,7 +6,7 @@ var authenticate = function (req, res){
         res.redirect('/admin/login');
     } else {
         // uncomment below line for first run
-        // admin = new administratorModel({ 'username':'admin', 'password':'admin'}); admin.save();
+        //admin = new administratorModel({ 'username':'admin', 'password':'admin'}); admin.save();
         administratorModel.findOne({ 'username':req.body.username }, function (err, doc) {
             if (err) {
                 res.send(err);
