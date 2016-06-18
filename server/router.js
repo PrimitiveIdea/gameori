@@ -32,7 +32,7 @@ router = function (app) {
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');
     });
-
+    
     // delete a todo
     // app.delete('/api/todos/:todo_id', function (req, res) {
     //     Todo.remove({

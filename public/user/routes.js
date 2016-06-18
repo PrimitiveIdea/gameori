@@ -11,6 +11,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: './public/user/views/games.html',
             controller: 'mainController'
         })
+        .when('/reviews', {
+            templateUrl: './public/user/views/reviews.html',
+            controller: 'mainController'
+        })
+        .when('/single', {
+            templateUrl: './public/user/views/single.html',
+            controller: 'mainController'
+        })
         .when('/404', {
             templateUrl: './public/user/views/404.html',
             controller: 'mainController'
