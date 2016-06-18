@@ -16,9 +16,18 @@ var getGameProduct = function (req, res){
 	}
 	res.json(gameData.gameData);
 };
+
+var getGameComment = function (req, res){
+	var gameData = gameoriModel.getGameComment(req);
+	if (gameData.err){
+		res.send(model.err);
+	}
+	res.json(gameData.gameData);
+};
 indexController = {
 	getTodos : getTodos,
-	getGameProduct : getGameProduct
+	getGameProduct : getGameProduct,
+	getGameComment : getGameComment
 };
 
 module.exports = indexController;
