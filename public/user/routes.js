@@ -7,6 +7,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: './public/user/views/main.html',
             controller: 'mainController'
         })
+        .when('/404', {
+            templateUrl: './public/user/views/404.html',
+            controller: 'mainController'
+        })
         // .when('/game/:gametitle', { // product
         //     templateUrl: '../user/views/game-view.html',
         //     controller: 'gameproductController'

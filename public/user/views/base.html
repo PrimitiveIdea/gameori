@@ -1,28 +1,32 @@
 <!doctype html>
-
-<!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="gameori">
+
 <head>
-    <!-- META -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+<!-- meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Gameori</title>
+<title>Gameori</title>
 
-    <!-- STYLE VENDOR-->
-    <link rel="stylesheet" href="./vendor/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./public/user/res/css/main.css">
-    <!-- SCRIPT VENDOR-->
-    <script src="./vendor/angular/angular.js"></script>
-    <script src="./vendor/angular-route/angular-route.js"></script>
-    <script src="./vendor/jquery/dist/jquery.js"></script>
-    <script src="./vendor/bootstrap/dist/js/bootstrap.js"></script>
-
-    <!-- SCRIPT -->
-    <script src="./public/user/controllers/mainController.js"></script>
-    <script src="./public/user/routes.js"></script>
-    <script src="./public/user/app.js"></script>
+<!-- style -->
+<link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"  type="text/css" media="all">
+<link href="./public/user/res/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="./public/user/res/css/component.css" rel="stylesheet" type="text/css"/>
+<!-- script-->
+<script src="./vendor/angular/angular.js"></script>
+<script src="./vendor/angular-route/angular-route.js"></script>
+<script src="./vendor/jquery/dist/jquery.min.js"></script>
+<script src="./vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="./public/user/controllers/mainController.js"></script>
+<script src="./public/user/routes.js"></script>
+<script src="./public/user/app.js"></script>
+<script src="./public/user/res/js/modernizr.custom.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--FONTS-->
+<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
+
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
     <!-- SET THE VIEW FOR TEMPLATING -->
