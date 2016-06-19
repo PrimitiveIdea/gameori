@@ -1,5 +1,6 @@
 // controller declaration ============================================
 var singleGameController = require('./user/controllers/singleGameController');
+var GameCommentController = require('./user/controllers/GameCommentController');
 var loginController = require('./admin/controllers/loginController')
 var router;
 
@@ -27,8 +28,11 @@ router = function (app) {
     app.get('/api/game/:game_title', function (req, res) {
        singleGameController.getsingleGame(req.params.game_title,res);
     });
-    app.get('/api/game/:game_comment', function (req, res) {
-        indexController.getGameComment(req.params.game_comment,res);
+    app.get('/api/game/comment/:game_title', function (req, res) {
+        GameCommentController.getGameComment(req.params.game_title,res);
+    });
+    app.post('/api/game/comment/', function (req, res) {
+        GameCommentController.postGameComment(req,res);
     });
 
     // user page ==========================================================
