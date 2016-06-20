@@ -7,7 +7,7 @@ var getGameComment = function (req, res){
         // game = new GameCommentModel({ 'title':'a', 'comment':'sdaksds', 'date' : Date.now, 'name' : 'Tommy'}); 
         // console.log(game);
         // game.save();
-        GameCommentModel.find({ 'title': req }, function (err, doc) {
+        GameCommentModel.find({ 'game_id': req }, function (err, doc) {
         	//console.log(doc);
             if (err) {
                 res.send(err);
@@ -24,7 +24,7 @@ var getGameComment = function (req, res){
 var postGameComment = function (req, res){
 	comment = new GameCommentModel(
 	{
-		'title' : req.body.title,
+		'game_id' : req.body.game_id,
 		'comment' : req.body.comment,
 		'date' : req.body.date,
 		'name' : req.body.name

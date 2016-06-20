@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
 var GameCommentSchema = new schema({
-    title: {
+    game_id: {
         type: String,
         default: ''
     },

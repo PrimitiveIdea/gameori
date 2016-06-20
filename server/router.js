@@ -2,6 +2,7 @@
 var singleGameController = require('./user/controllers/singleGameController');
 var GameCommentController = require('./user/controllers/GameCommentController');
 var loginController = require('./admin/controllers/loginController')
+var AdminGameController = require('./admin/controllers/GameController')
 var router;
 
 var auth = function(req, res, next) {
@@ -33,6 +34,15 @@ router = function (app) {
     });
     app.post('/api/game/comment/', function (req, res) {
         GameCommentController.postGameComment(req,res);
+    });
+    app.get('/api/admin/game/all', function (req, res) {
+       AdminGameController.getAllGame(req,res);
+    });
+    app.post('/api/admin/game/add', function (req, res) {
+        AdminGameController.postGame(req,res);
+    });
+    app.delete('/api/admin/game/delete/:game_title', function (req, res) {
+        AdminGameController.deleteGame(req.params.game_title,res);
     });
 
     // user page ==========================================================
