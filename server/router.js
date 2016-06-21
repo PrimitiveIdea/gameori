@@ -27,8 +27,8 @@ router = function (app) {
     app.get('/api/game/:game_title', function (req, res) {
        singleGameController.getsingleGame(req.params.game_title,res);
     });
-    app.get('/api/game/:game_comment', function (req, res) {
-        indexController.getGameComment(req.params.game_comment,res);
+    app.get('/api/game/:game_title/:game_comment', function (req, res) {
+        CommentGameController.GetGameComment(req.params.game_comment,res);
     });
 
     // user page ==========================================================
