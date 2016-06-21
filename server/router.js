@@ -36,7 +36,7 @@ router = function (app) {
         GameCommentController.postGameComment(req,res);
     });
     app.get('/api/admin/game/all', function (req, res) {
-       AdminGameController.getAllGame(req,res);
+        AdminGameController.getAllGame(req,res);
     });
     app.post('/api/admin/game/add', function (req, res) {
         AdminGameController.postGame(req,res);
@@ -44,12 +44,15 @@ router = function (app) {
     app.delete('/api/admin/game/delete/:game_title', function (req, res) {
         AdminGameController.deleteGame(req.params.game_title,res);
     });
+    app.get('/api/game/:game_title/:game_comment', function (req, res) {
+        CommentGameController.GetGameComment(req.params.game_comment,res);
+    });
 
     // user page ==========================================================
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');
     });
-    
+
     // delete a todo
     // app.delete('/api/todos/:todo_id', function (req, res) {
     //     Todo.remove({
