@@ -17,8 +17,11 @@ $ [sudo] npm install -g bower
 
 ## Additional Packages
 * BodyParser - Defined as npm module in the [package.json](package.json) file.
+* Connect-Multiparty - Defined as npm module in the [package.json](package.json) file.
 * Express - Defined as npm module in the [package.json](package.json) file.
 * Mongoose - Defined as npm module in the [package.json](package.json) file.
+* Nodemon - Defined as npm module in the [package.json](package.json) file.
+* Path - Defined as npm module in the [package.json](package.json) file.
 * AngularJS - Defined as bower module in the [bower.json](bower.json) file.
 * Bootstrap - Defined as bower module in the [bower.json](bower.json) file.
 * Font Awesome - Defined as bower module in the [bower.json](bower.json) file.
@@ -35,6 +38,10 @@ $ [sudo] npm install -g bower
 
   Run server:
 
+    $ nodemon
+
+  Alternatively, when not using nodemon (and for production environments) you can run:
+
     $ node server
 
   Then, open a browser and go to:
@@ -45,6 +52,6 @@ $ [sudo] npm install -g bower
 1. [Node Todo App](https://github.com/scotch-io/node-todo)
 2. [MEAN Stack on OpenShift](https://github.com/linnovate/mean-on-openshift)
 
-## Branch
-git pull origin master
-git push origin [branch]
+## Templates
+1. [SB Admin](http://startbootstrap.com/template-overviews/sb-admin)
+2. [Games Center - W3Layouts](https://w3layouts.com/games-center-a-games-category-flat-bootstrap-responsive-web-template)

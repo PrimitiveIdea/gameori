@@ -33,13 +33,7 @@ router = function (app) {
 
     // api ================================================================
     app.get('/api/game/:game_title', function (req, res) {
-       singleGameController.getsingleGame(req.params.game_title,res);
-    });
-    app.get('/api/game/comment/:game_title', function (req, res) {
-        GameCommentController.getGameComment(req.params.game_title,res);
-    });
-    app.post('/api/game/comment/', function (req, res) {
-        GameCommentController.postGameComment(req,res);
+        singleGameController.getsingleGame(req.params.game_title,res);
     });
     app.get('/api/admin/game/all', function (req, res) {
         AdminGameController.getAllGame(req,res);
@@ -49,6 +43,12 @@ router = function (app) {
     });
     app.delete('/api/admin/game/delete/:game_title', function (req, res) {
         AdminGameController.deleteGame(req.params.game_title,res);
+    });
+    app.get('/api/game/comment/:game_title', function (req, res) {
+        GameCommentController.getGameComment(req.params.game_title,res);
+    });
+    app.post('/api/game/comment/', function (req, res) {
+        GameCommentController.postGameComment(req,res);
     });
     app.get('/api/game/:game_title/:game_comment', function (req, res) {
         CommentGameController.GetGameComment(req.params.game_comment,res);

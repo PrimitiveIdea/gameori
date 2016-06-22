@@ -31,7 +31,6 @@ var singleGameSchema = new schema({
     	type: String,
     	default: ''
     }
-    
 });
 var singleGameModel = mongoose.model('games', singleGameSchema, 'games');
 
