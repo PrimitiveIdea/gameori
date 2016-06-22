@@ -5,6 +5,7 @@ var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var multipart = require('connect-multiparty');
 var util = require(__base + '/lib/util');
 var database = require(__base + '/database');
 var router = require(__base + '/server/router');
@@ -26,6 +27,7 @@ middleware = function(app) {
 	app.use(bodyParser.urlencoded({'extended': 'true'}));
 	app.use(bodyParser.json());
 	app.use(bodyParser.json({type: 'application/vnd.api+json'}));
+    app.use(multipart());
     // override with the X-HTTP-Method-Override header in the request
 	app.use(methodOverride('X-HTTP-Method-Override'));
     // database connectino

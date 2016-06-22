@@ -1,9 +1,11 @@
 // controller declaration ============================================
 var singleGameController = require('./user/controllers/singleGameController');
 var GameCommentController = require('./user/controllers/GameCommentController');
-var loginController = require('./admin/controllers/loginController')
-var AdminGameController = require('./admin/controllers/GameController')
+var loginController = require('./admin/controllers/loginController');
+var AdminGameController = require('./admin/controllers/GameController');
+var util = require(__base + '/lib/util');
 var router;
+var fs = require('fs');
 
 var auth = function(req, res, next) {
     if (req.session && req.session.username === "admin" && req.session.admin) {
@@ -15,14 +17,18 @@ var auth = function(req, res, next) {
 
 router = function (app) {
     // admin page =========================================================
+    app.get('/admin', auth, function (req, res) {
+        res.sendFile(__base + '/public/admin/views/index.html');
+    });
     app.get('/admin/login', function (req, res) {
         res.sendFile(__base + '/public/admin/views/login.html');
     });
     app.post('/admin/enter', function (req, res) {
         loginController.authenticate(req, res);
     });
-    app.get('/admin', auth, function (req, res) {
-        res.sendFile(__base + '/public/admin/views/index.html');
+    app.post('/test', function(req, res) {
+        util.createDirectory('./public/user/res/test');
+        util.uploadFile(req.files.displayImage.path, './public/user/res/test/test');
     });
 
     // api ================================================================
