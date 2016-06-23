@@ -3,6 +3,7 @@ var singleGameController = require('./user/controllers/singleGameController');
 var GameCommentController = require('./user/controllers/GameCommentController');
 var loginController = require('./admin/controllers/loginController');
 var AdminGameController = require('./admin/controllers/GameController');
+var popularGameController = require('./admin/controllers/popularGameController');
 var util = require(__base + '/lib/util');
 var router;
 var fs = require('fs');
@@ -18,7 +19,7 @@ var auth = function(req, res, next) {
 router = function (app) {
     // admin page =========================================================
     app.get('/admin', auth, function (req, res) {
-        res.sendFile(__base + '/public/admin/views/index.html');
+        res.sendFile(__base + '/public/admin/views/index-rtl.html');
     });
     app.get('/admin/login', function (req, res) {
         res.sendFile(__base + '/public/admin/views/login.html');
@@ -53,7 +54,15 @@ router = function (app) {
     app.get('/api/game/:game_title/:game_comment', function (req, res) {
         CommentGameController.GetGameComment(req.params.game_comment,res);
     });
-
+    app.get('/api/admin/game/popular', function (req, res) {
+        popularGameController.getPopularGame(req,res);
+    });
+    app.post('/api/admin/game/popular/add', function (req, res) {
+        popularGameController.postPopularGame(req,res);
+    });
+    app.delete('/api/admin/game/popular/delete', function (req, res) {
+        popularGameController.deletePopularGame(req.params.game_title,res);
+    });
     // user page ==========================================================
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');
