@@ -4,5 +4,6 @@
 angular.module('gameori', [
     'ngRoute',
     'appRoutes',
-    'mainModule',
-    'mainService']);
+    'ReloadGamesService',
+    'FeaturingGamesService',
+    'mainModule']);
