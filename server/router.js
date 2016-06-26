@@ -33,8 +33,8 @@ router = function (app) {
     });
 
     // api ================================================================
-    app.get('/api/game/:game_title', function (req, res) {
-        singleGameController.getsingleGame(req.params.game_title,res);
+    app.get('/api/game/:game_id', function (req, res) {
+        singleGameController.getsingleGame(req.params.game_id,res);
     });
     app.get('/api/admin/game/all', function (req, res) {
         AdminGameController.getAllGame(req,res);

@@ -1,8 +1,5 @@
 angular.module('mainService', [])
-
-	// super simple service
-	// each function returns a promise object 
-	.factory('Todos', ['$http',function($http) {
+	.factory('gameori', ['$http',function($http) {
 		return {
 			get : function() {
 				return $http.get('/api/todos');

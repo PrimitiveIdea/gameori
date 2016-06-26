@@ -4,4 +4,8 @@
 angular.module('gameori', [
 	'ngRoute',
 	'appRoutes',
-	'mainModule']);
+    'customFilters',
+    'sharedService',
+	'mainModule',
+    'gameService',
+    'gameModule']);
