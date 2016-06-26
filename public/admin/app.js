@@ -6,4 +6,8 @@ angular.module('gameori', [
     'appRoutes',
     'ReloadGamesService',
     'FeaturingGamesService',
-    'mainModule']);
+    'DeletePostService',
+    'DeleteFeaturingService',
+    'mainModule',
+    'deletePostModule',
+    'deleteFeaturingModule']);

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>GameOri Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="./public/admin/res/css/bootstrap.min.css" rel="stylesheet">
@@ -45,8 +45,12 @@
     <script src="./vendor/angular-route/angular-route.js"></script>
     <script src="./vendor/bootstrap/dist/js/bootstrap.js"></script>
     <script src="./public/admin/controllers/mainController.js"></script>
+    <script src="./public/admin/controllers/deletePostController.js"></script>
+    <script src="./public/admin/controllers/deleteFeaturingController.js"></script>
     <script src="./public/admin/services/reloadGamesService.js"></script>
     <script src="./public/admin/services/featuringGamesService.js"></script>
+    <script src="./public/admin/services/deletePostService.js"></script>
+    <script src="./public/admin/services/deleteFeaturingService.js"></script>
     <script src="./public/admin/routes.js"></script>
     <script src="./public/admin/app.js"></script>
     <script src="./public/admin/res/js/modernizr.custom.js"></script>
@@ -81,7 +85,7 @@
                         <a href="/admin/post">Post Game Review</a>
                     </li>
                     <li>
-                        <a href="/admin/delete">Delete Game Review</a>
+                        <a href="/admin/post/delete">Delete Game Review</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#fp">Featuring and Popular</a>

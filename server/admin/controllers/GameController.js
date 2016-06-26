@@ -31,7 +31,6 @@ var postGame = function (req, res){
 		'tag' : req.body.tag,
         'image_link' : req.body.image_link
 	});
-    console.log(game);
 	game.save(function(e){
         if(e) console.log(e);
         else res.redirect('/admin');
@@ -44,7 +43,7 @@ var deleteGame = function (req, res){
         else {
             singleGameModel.find({}, function(err,doc){
                 if(err) res.send(404);
-                else res.send(doc);
+                else res.send(200);
             });
         }
     });
