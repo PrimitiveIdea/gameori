@@ -1,0 +1,35 @@
+ <div>
+    	<h3>Posting New Game</h3>
+        <form role="form" action="../api/admin/game/add" method="post">
+        	<table>
+        		<tbody>
+        			<tr>
+        				<td><label for="game_id">Insert Game ID</label></td>
+        				<td><input type="text" name="game_id" required="required" size="102"/></td>
+        			</tr>
+        			<tr>
+            			<td><label for="game_title">Insert Game Title</label></td>
+            			<td><input type="text" name="game_title" required="required" size="102"size="102"/>			
+        			</tr>
+        			<tr>
+            			<td><label for="description">Insert Description</label></td>
+            			<td><textarea name="description" cols="100" rows="8" required="required" />			
+        			</tr>
+        			<tr>
+            			<td><label for="tag">Insert Tag</label></td>
+            			<td><input type="text" name="tag" required="required" size="102"/>			
+        			</tr>
+        			<tr>
+            			<td><label for="tag">Insert Amazon Link</label></td>
+            			<td><input type="" name="amazon_link" required="required" size="102"/>			
+        			</tr>
+        			<tr>
+            			<td><label for="tag">Insert Image Link</label></td>
+            			<td><input type="text" name="image_link" required="required" size="102"/>			
+        			</tr>
+        		</tbody>
+        	</table>
+        	
+            <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+        </form>
+ </div>
