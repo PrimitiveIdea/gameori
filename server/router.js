@@ -39,10 +39,10 @@ router = function (app) {
     app.get('/api/admin/game/all', function (req, res) {
         AdminGameController.getAllGame(req,res);
     });
-    app.post('/api/admin/game/add', function (req, res) {
+    app.post('/api/admin/game/add', auth,function (req, res) {
         AdminGameController.postGame(req,res);
     });
-    app.delete('/api/admin/game/delete/:game_title', function (req, res) {
+    app.delete('/api/admin/game/delete/:game_title', auth,function (req, res) {
         AdminGameController.deleteGame(req.params.game_title,res);
     });
     app.get('/api/game/comment/:game_title', function (req, res) {
@@ -57,10 +57,10 @@ router = function (app) {
     app.get('/api/admin/game/featuring', function (req, res) {
         featuringGameController.getFeaturingGame(req,res);
     });
-    app.post('/api/admin/game/featuring/add', function (req, res) {
+    app.post('/api/admin/game/featuring/add', auth,function (req, res) {
         featuringGameController.postFeaturingGame(req,res);
     });
-    app.delete('/api/admin/game/featuring/delete', function (req, res) {
+    app.delete('/api/admin/game/featuring/delete', auth,function (req, res) {
         featuringGameController.deleteFeaturingGame(req,res);
     });
     // user page ==========================================================

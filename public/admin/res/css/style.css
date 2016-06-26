@@ -1,7 +1,8 @@
 .template {
 	float:center;
 	text-align: left;
-	height: 100%;
+	height: 89vh;
+	overflow-y: auto;
 }
 td{
 	padding:5px;

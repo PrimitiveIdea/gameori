@@ -22,28 +22,35 @@ var getFeaturingGame = function (req, res){
         });
 };
 var postFeaturingGame = function (req, res){
-	featuringgame = new featuringGameModel(
-	{
-		'featuring' : {
-            'game_id_1' : 'a',
-            'game_id_2' : 'b'
-        },
-        'popular' : {
-            'game_id_1' : 'a',
-            'game_id_2' : 'b'  
+    featuringGameModel.find({},function(err,doc){
+        if(doc!=""){
+            res.redirect('/admin');
         }
-	});
-	featuringgame.save();
-	res.send(200);
+        else{
+            featuringgame = new featuringGameModel(
+            {
+                'featuring' : {
+                    'game_id_1' : req.body.game_id_1f,
+                    'game_id_2' : req.body.game_id_2f
+                },
+                'popular' : {
+                    'game_id_1' : req.body.game_id_1p,
+                    'game_id_2' : req.body.game_id_2p
+                }
+            });
+            featuringgame.save(function(e){
+                if(e) console.log(e);
+                else res.redirect('/admin');
+            });
+        }
+    });
+	
 };
 var deleteFeaturingGame = function (req, res){
     featuringGameModel.remove({}, function(err,result){
         if(err) res.send(404);
         else {
-            featuringGameModel.find({}, function(err,doc){
-                if(err) res.send(404);
-                else res.send(doc);
-            });
+            res.send(200);
         }
     });
 };
