@@ -1,6 +1,6 @@
  <div>
     	<h3>Posting New Game</h3>
-        <form role="form" action="../api/admin/game/add" method="post">
+        <form role="form" action="../api/admin/game/add" method="post" enctype="multipart/form-data">
         	<table>
         		<tbody>
         			<tr>
@@ -9,27 +9,43 @@
         			</tr>
         			<tr>
             			<td><label for="game_title">Insert Game Title</label></td>
-            			<td><input type="text" name="game_title" required="required" size="102"size="102"/>			
+            			<td><input type="text" name="game_title" required="required" size="102"size="102"/>
         			</tr>
         			<tr>
             			<td><label for="description">Insert Description</label></td>
-            			<td><textarea name="description" cols="100" rows="8" required="required" />			
+            			<td><textarea name="description" cols="100" rows="8" required="required" />
         			</tr>
         			<tr>
             			<td><label for="tag">Insert Tag</label></td>
-            			<td><input type="text" name="tag" required="required" size="102"/>			
+            			<td><input type="text" name="tag" required="required" size="102"/>
         			</tr>
         			<tr>
             			<td><label for="tag">Insert Amazon Link</label></td>
-            			<td><input type="" name="amazon_link" required="required" size="102"/>			
+            			<td><input type="" name="amazon_link" required="required" size="102"/>
         			</tr>
         			<tr>
-            			<td><label for="tag">Insert Image Link</label></td>
-            			<td><input type="text" name="image_link" required="required" size="102"/>			
+            			<td><label for="tag">Insert Image (Icon)</label></td>
+            			<td><input type="file" name="image_icon"/>
         			</tr>
+                    <tr>
+                        <td><label for="tag">Insert Image (Thumb)</label></td>
+                        <td><input type="file" name="image_thumb"/>
+                    </tr>
+                    <tr>
+                        <td><label for="tag">Insert Image (Large)</label></td>
+                        <td><input type="file" name="image_large"/>
+                    </tr>
+                    <tr>
+                        <td><label for="tag">Insert Image (Review)</label></td>
+                        <td><input type="file" name="image_review"/>
+                    </tr>
+                    <tr>
+                        <td><label for="tag">Insert Image (Banner)</label></td>
+                        <td><input type="file" name="image_banner"/>
+                    </tr>
         		</tbody>
         	</table>
-        	
+
             <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
         </form>
  </div>

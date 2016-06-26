@@ -6,7 +6,6 @@ var AdminGameController = require('./admin/controllers/GameController');
 var featuringGameController = require('./admin/controllers/featuringGameController');
 var util = require(__base + '/lib/util');
 var router;
-var fs = require('fs');
 
 var auth = function(req, res, next) {
     if (req.session && req.session.username === "admin" && req.session.admin) {
@@ -28,7 +27,6 @@ router = function (app) {
         loginController.authenticate(req, res);
     });
     app.post('/test', function(req, res) {
-        util.createDirectory('./public/user/res/test');
         util.uploadFile(req.files.displayImage.path, './public/user/res/test/test');
     });
 

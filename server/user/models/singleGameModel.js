@@ -27,9 +27,25 @@ var singleGameSchema = new schema({
     	type: String,
     	default: ''
     },
-    image_link: {
+    image_icon: {
     	type: String,
     	default: ''
+    },
+    image_thumb: {
+        type: String,
+        default: ''
+    },
+    image_review: {
+        type: String,
+        default: ''
+    },
+    image_large: {
+        type: String,
+        default: ''
+    },
+    image_banner: {
+        type: String,
+        default: ''
     }
 });
 var singleGameModel = mongoose.model('games', singleGameSchema, 'games');
