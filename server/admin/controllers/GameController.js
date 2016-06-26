@@ -28,12 +28,15 @@ var postGame = function (req, res){
         'game_id' : req.body.game_id,
 		'description' : req.body.description,
         'amazon_link' : req.body.amazon_link,
-		'date' : req.body.date,
 		'tag' : req.body.tag,
         'image_link' : req.body.image_link
 	});
-	game.save();
-	res.send(200);
+    console.log(game);
+	game.save(function(e){
+        if(e) console.log(e);
+        else res.redirect('/admin');
+    });
+    
 };
 var deleteGame = function (req, res){
     singleGameModel.remove({ 'game_id' : req}, function(err,result){

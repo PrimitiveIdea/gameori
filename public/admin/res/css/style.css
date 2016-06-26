@@ -1,5 +1,11 @@
 .template {
 	float:center;
 	text-align: left;
-	height: 86vh;
+	height: 100%;
+}
+td{
+	padding:5px;
+}
+label{
+	margin:10px;
 }

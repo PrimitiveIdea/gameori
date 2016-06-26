@@ -11,7 +11,6 @@ angular.module('mainModule', [])
 		featuringgames.get()
 			.success(function(data){
 				$scope.featuring_games = data;
-				console.log(data);
 			});
 		/*// GET =====================================================================
 		// when landing on the page, get all todos and show them

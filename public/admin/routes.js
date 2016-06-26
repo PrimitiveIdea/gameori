@@ -7,8 +7,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: './public/admin/views/main.html',
             controller: 'mainController'
         })
-        .when('/login', { // adminpage login
-            templateUrl: './public/admin/views/login.html',
+        .when('/admin/post', { // adminpage login
+            templateUrl: '../public/admin/views/posting.html',
             controller: 'mainController'
         })
 
