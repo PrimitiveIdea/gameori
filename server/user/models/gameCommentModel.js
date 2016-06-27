@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
-var GameCommentSchema = new schema({
+var gameCommentSchema = new schema({
     game_id: {
         type: String,
         default: ''
@@ -19,8 +19,7 @@ var GameCommentSchema = new schema({
         type: String,
         default: ''
     }
-    
 });
-var GameCommentModel = mongoose.model('gamescomment', GameCommentSchema, 'gamescomment');
+var gameCommentModel = mongoose.model('gamecomments', gameCommentSchema, 'gamecomments');
 
-module.exports = GameCommentModel;
+module.exports = gameCommentModel;

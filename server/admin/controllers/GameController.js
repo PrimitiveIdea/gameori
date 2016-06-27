@@ -43,11 +43,13 @@ var postGame = function (req, res){
 		'description' : req.body.description,
 		'tag' : req.body.tag,
         'amazon_link' : req.body.amazon_link,
-        'image_icon' : image_icon,
-        'image_thumb' : image_thumb,
-        'image_large' : image_large,
-        'image_review' : image_review,
-        'image_banner' : image_banner
+        'images' : {
+            'image_icon' : image_icon,
+            'image_thumb' : image_thumb,
+            'image_large' : image_large,
+            'image_review' : image_review,
+            'image_banner' : image_banner
+        }
 	});
 	game.save(function(e){
         if(e) console.log(e);

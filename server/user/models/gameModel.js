@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
-var singleGameSchema = new schema({
+var gameSchema = new schema({
     game_id: {
         type: String,
         default: ''
@@ -27,27 +27,11 @@ var singleGameSchema = new schema({
     	type: String,
     	default: ''
     },
-    image_icon: {
-    	type: String,
-    	default: ''
-    },
-    image_thumb: {
-        type: String,
-        default: ''
-    },
-    image_review: {
-        type: String,
-        default: ''
-    },
-    image_large: {
-        type: String,
-        default: ''
-    },
-    image_banner: {
-        type: String,
+    images: {
+        type: Object,
         default: ''
     }
 });
-var singleGameModel = mongoose.model('games', singleGameSchema, 'games');
+var gameModel = mongoose.model('games', gameSchema, 'games');
 
-module.exports = singleGameModel;
+module.exports = gameModel;

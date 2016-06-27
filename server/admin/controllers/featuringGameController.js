@@ -29,13 +29,21 @@ var postFeaturingGame = function (req, res){
         else{
             featuringgame = new featuringGameModel(
             {
+                'banner' : {
+                    'game_id_1' : req.body.game_id_1b,
+                    'game_id_2' : req.body.game_id_2b,
+                    'game_id_3' : req.body.game_id_3b,
+                    'game_id_4' : req.body.game_id_4b
+                },
                 'featuring' : {
                     'game_id_1' : req.body.game_id_1f,
-                    'game_id_2' : req.body.game_id_2f
+                    'game_id_2' : req.body.game_id_2f,
+                    'game_id_3' : req.body.game_id_3f
                 },
                 'popular' : {
                     'game_id_1' : req.body.game_id_1p,
-                    'game_id_2' : req.body.game_id_2p
+                    'game_id_2' : req.body.game_id_2p,
+                    'game_id_3' : req.body.game_id_3p
                 }
             });
             featuringgame.save(function(e){

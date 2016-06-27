@@ -3,6 +3,10 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
 var featuringGameSchema = new schema({
+    banner: {
+        type: Object,
+        default: ''
+    },
     featuring: {
         type: Object,
         default: ''
@@ -11,7 +15,6 @@ var featuringGameSchema = new schema({
         type: Object,
         default: ''
     }
-    
 });
 var featuringGameModel = mongoose.model('featuringgame', featuringGameSchema, 'featuringgame');
 
