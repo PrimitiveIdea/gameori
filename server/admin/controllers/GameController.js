@@ -1,13 +1,13 @@
 var GameController;
 var util = require(__base + '/lib/util');
-var singleGameModel = require('../../user/models/singleGameModel');
+var gameModel = require('../../user/models/gameModel');
 
 var getAllGame = function (req, res){
 	// uncomment below line for first run
         // game = new GameCommentModel({ 'title':'a', 'comment':'sdaksds', 'date' : Date.now, 'name' : 'Tommy'}); 
         // console.log(game);
         // game.save();
-        singleGameModel.find({}, function (err, doc) {
+        gameModel.find({}, function (err, doc) {
         	//console.log(doc);
             if (err) {
                 res.send(err);
@@ -36,7 +36,7 @@ var postGame = function (req, res){
     util.uploadFile(req.files.image_review.path, image_review);
     util.uploadFile(req.files.image_banner.path, image_banner);
 
-	game = new singleGameModel(
+	game = new gameModel(
 	{
         'game_id' : req.body.game_id,
         'game_title' : req.body.game_title,
@@ -57,7 +57,7 @@ var postGame = function (req, res){
     });
 };
 var deleteGame = function (req, res){
-    singleGameModel.remove({ 'game_id' : req}, function(err,result){
+    gameModel.remove({ 'game_id' : req}, function(err,result){
         if(err) res.send(404);
         else {
             singleGameModel.find({}, function(err,doc){

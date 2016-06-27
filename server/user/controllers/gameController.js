@@ -1,8 +1,8 @@
-var singleGameModel = require('../models/singleGameModel');
+var singleGameModel = require('../models/gameModel');
 var gameController;
 
 var getSingleGame = function (req, res){
-        singleGameModel.findOne({ 'game_id':req }, function (err, doc) {
+        gameModel.findOne({ 'game_id':req }, function (err, doc) {
             if (err) {
                 res.send(err);
             }

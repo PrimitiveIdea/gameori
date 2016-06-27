@@ -1,5 +1,5 @@
 // controller declaration ============================================
-var singleGameController = require('./user/controllers/singleGameController');
+var singleGameController = require('./user/controllers/gameController');
 var GameCommentController = require('./user/controllers/GameCommentController');
 var loginController = require('./admin/controllers/loginController');
 var AdminGameController = require('./admin/controllers/GameController');

@@ -1,5 +1,5 @@
 var GameCommentController;
-var GameCommentModel = require('../models/GameCommentModel');
+var GameCommentModel = require('../models/gameCommentModel');
 
 
 var getGameComment = function (req, res){
