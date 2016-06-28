@@ -31,7 +31,7 @@ router = function (app) {
     });
 
     // api ================================================================
-    app.get('/api/game/all', function (req, res) {
+    app.get('/api/game/all/:limit/:skip', function (req, res) {
         userGameController.getAllGames(req, res);
     });
     app.get('/api/game/:game_id', function (req, res) {

@@ -44,12 +44,12 @@
             <div class="wrap">
                 <div class="main">
                     <ul id="og-grid" class="og-grid">
-                        <li>
-                            <a href="/#" data-largesrc="./public/user/res/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-                                <img class="img-responsive" src="./public/user/res/images/thumbs/1.jpg" alt="img01"/>
+                        <li ng-repeat="new_game in new_games">
+                            <a href="/#" data-largesrc="{{ new_game.images.image_large }}" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+                                <img class="img-responsive" src="{{ new_game.images.image_thumb }}" alt="img01"/>
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="/#" data-largesrc="./public/user/res/images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
                                 <img class="img-responsive" src="./public/user/res/images/thumbs/2.jpg" alt="img02"/>
                             </a>
@@ -83,7 +83,7 @@
                             <a href="/#" data-largesrc="./public/user/res/images/8.jpg" data-title="Panda Game" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
                                 <img class="img-responsive" src="./public/user/res/images/thumbs/8.jpg" alt="img01"/>
                             </a>
-                        </li>
+                        </li> -->
                         <div class="clearfix"> </div>
                     </ul>
                 </div>
@@ -112,14 +112,14 @@
         <div class="container">
             <div class="col-md-4 latest">
                 <h4>Latest</h4>
-                <div class="late">
-                    <a href ng-click="linkToGame(1)" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la.jpg" alt="">
+                <div class="late" ng-repeat="latest_game in latest_games">
+                    <a href ng-click="linkToGame(latest_game.game_id)" class="fashion">
+                        <img class="img-responsive " src="{{ latest_game.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
-                        <p><a href ng-click="linkToGame(1)"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href ng-click="linkToGame(1)"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(latest_game.game_id)">{{ latest_game.tag }}</a></p>
+                        <a class="comment" href ng-click="linkToGame(latest_game.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>

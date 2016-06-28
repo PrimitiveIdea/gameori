@@ -9,7 +9,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
         .when('/games', {
             templateUrl: './public/user/views/games.html',
-            controller: 'mainController'
+            controller: 'gamesController'
         })
         .when('/game/:game_id?', {
             templateUrl: './public/user/views/game.html',

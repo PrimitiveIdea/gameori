@@ -5,17 +5,17 @@
 		<div class="wrap">
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
-					<li>
-						<a href="/#" data-largesrc="./public/user/res/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
-							<img class="img-responsive" src="./public/user/res/images/thumbs/1.jpg" alt="img01"/>
+					<li ng-repeat="game in games">
+						<a href ng-click="linkToGame(game.game_id)" data-largesrc="{{ game.images.image_large }}" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
+							<img class="img-responsive" src="{{ game.images.image_thumb }}" alt="img01"/>
 						</a>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="/#" data-largesrc="./public/user/res/images/2.jpg" data-title="Angry Birds" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
 							<img class="img-responsive" src="./public/user/res/images/thumbs/2.jpg" alt="img02"/>
 						</a>
-					</li>
-					<li>
+					</li> -->
+					<!-- <li>
 						<a href="/#" data-largesrc="./public/user/res/images/3.jpg" data-title="Bike Games"  data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
 							<img class="img-responsive" src="./public/user/res/images/thumbs/3.jpg" alt="img03"/>
 						</a>
@@ -64,7 +64,7 @@
 						<a href="/#" data-largesrc="./public/user/res/images/1.jpg" data-title="Subway Surfers" data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada purus a convallis dictum. Phasellus sodales varius diam, non sagittis lectus. Morbi id magna ultricies ipsum condimentum scelerisque vel quis felis.. Donec et purus nec leo interdum sodales nec sit amet magna. Ut nec suscipit purus, quis viverra urna.">
 							<img class="img-responsive" src="./public/user/res/images/thumbs/1.jpg" alt="img01"/>
 						</a>
-					</li>
+					</li> -->
 					 <div class="clearfix"> </div>
 				</ul>
 			</div>
@@ -77,4 +77,4 @@
 		});
 	</script>
 </div>
-<!---->
+<!--
