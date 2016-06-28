@@ -1,6 +1,7 @@
 'use strict'
 
 // controller declaration =================================================
+var awsController             = require('./admin/controllers/awsController');
 var adminGameController       = require('./admin/controllers/gameController');
 var adminIndexController      = require('./admin/controllers/indexController');
 var adminLoginController      = require('./admin/controllers/loginController');
@@ -31,6 +32,10 @@ router = function (app) {
     });
 
     // api ================================================================
+    app.get('/api/aws', function (req, res) {
+        awsController.getData(req, res);
+    });
+
     app.get('/api/game/all/:limit/:skip', function (req, res) {
         userGameController.getAllGames(req, res);
     });

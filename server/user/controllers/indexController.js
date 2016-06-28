@@ -5,7 +5,6 @@ var indexController;
 
 var getGames = function (req, res){
     indexModel.find({}, function (err, doc) {
-        //console.log(doc);
         if (err) {
             res.send(err);
         }
