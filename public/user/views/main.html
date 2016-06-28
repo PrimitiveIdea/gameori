@@ -1,3 +1,4 @@
+<p>{{ index_game.popular.game }}</p>
 <!--imageslider-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!--indicators-->
@@ -11,16 +12,24 @@
     <!--wrapper for slides-->
     <div class="carousel-inner" role="listbox" width="100%" height="100%">
         <div class="item active">
-            <img src="./public/user/res/images/11.jpg" alt="GTA" style="margin:0 auto">
+            <a href ng-click="linkToGame(banner1.game_id)">
+                <img src="{{ banner1.images.image_banner }}" alt="{{ banner1.game_title }}" style="margin:0 auto">
+            </a>
         </div>
         <div class="item">
-            <img src="./public/user/res/images/11.jpg" alt="Chania" style="margin:0 auto">
+            <a href ng-click="linkToGame(banner2.game_id)">
+                <img src="{{ banner2.images.image_banner }}" alt="{{ banner2.game_title }}" style="margin:0 auto">
+            </a>
         </div>
         <div class="item">
-            <img src="./public/user/res/images/11.jpg" alt="Dota2" style="margin:0 auto">
+            <a href ng-click="linkToGame(banner3.game_id)">
+                <img src="{{ banner3.images.image_banner }}" alt="{{ banner3.game_title }}" style="margin:0 auto">
+            </a>
         </div>
         <div class="item">
-            <img src="./public/user/res/images/11.jpg" alt="Blizzard" style="margin:0 auto">
+            <a href ng-click="linkToGame(banner4.game_id)">
+                <img src="{{ banner4.images.image_banner }}" alt="{{ banner4.game_title }}" style="margin:0 auto">
+            </a>
         </div>
     </div>
 
@@ -151,7 +160,7 @@
                 <h4>Featured</h4>
                 <div class="late">
                     <a href="/game" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la3.jpg" alt="">
+                        <img class="img-responsive " src="{{ featuring1.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
@@ -162,7 +171,7 @@
                 </div>
                 <div class="late">
                     <a href="/game" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la2.jpg" alt="">
+                        <img class="img-responsive " src="{{ featuring2.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
@@ -173,7 +182,7 @@
                 </div>
                 <div class="late">
                     <a href="/game" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la1.jpg" alt="">
+                        <img class="img-responsive " src="{{ featuring3.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
@@ -188,7 +197,7 @@
                 <h4>Popular</h4>
                 <div class="late">
                     <a href="/game" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la1.jpg" alt="">
+                        <img class="img-responsive " src="{{ popular1.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
@@ -199,7 +208,7 @@
                 </div>
                 <div class="late">
                     <a href="/game" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la.jpg" alt="">
+                        <img class="img-responsive " src="{{ popular2.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
@@ -210,7 +219,7 @@
                 </div>
                 <div class="late">
                     <a href="/game" class="fashion">
-                        <img class="img-responsive " src="./public/user/res/images/la3.jpg" alt="">
+                        <img class="img-responsive " src="{{ popular3.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
                         <span>6 Apr, 2015</span>
