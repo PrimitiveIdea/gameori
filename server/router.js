@@ -1,3 +1,5 @@
+'use strict'
+
 // controller declaration =================================================
 var adminGameController       = require('./admin/controllers/gameController');
 var adminIndexController      = require('./admin/controllers/indexController');
@@ -5,6 +7,7 @@ var adminLoginController      = require('./admin/controllers/loginController');
 var userGameCommentController = require('./user/controllers/gameCommentController');
 var userGameController        = require('./user/controllers/gameController');
 var userIndexController       = require('./user/controllers/indexController');
+var util = require(__base + '/lib/util');
 var router;
 
 var auth = function(req, res, next) {
