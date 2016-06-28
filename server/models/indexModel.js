@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
-var featuringGameSchema = new schema({
+var indexSchema = new schema({
     banner: {
         type: Object,
         default: ''
@@ -16,6 +16,6 @@ var featuringGameSchema = new schema({
         default: ''
     }
 });
-var featuringGameModel = mongoose.model('featuringgame', featuringGameSchema, 'featuringgame');
+var indexModel = mongoose.model('index', indexSchema, 'index');
 
-module.exports = featuringGameModel;
+module.exports = indexModel;

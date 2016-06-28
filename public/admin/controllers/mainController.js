@@ -1,16 +1,14 @@
 angular.module('mainModule', [])
+	.controller('mainController', ['$scope','$http','game','index',
+		function($scope, $http, game, index) {
 
-	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','reloadgames','featuringgames', 
-		function($scope, $http, reloadgames, featuringgames) {
+		game.cget()
+			.success(function(data){
+				$scope.games = data;
+			});
 
-		reloadgames.get()
+		index.cget()
 			.success(function(data){
-				$scope.game = data;
+				$scope.index_games = data;
 			});
-		featuringgames.get()
-			.success(function(data){
-				$scope.featuring_games = data;
-			});
-		
 	}]);

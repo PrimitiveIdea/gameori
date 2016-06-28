@@ -1,13 +1,8 @@
-'use strict'
-
-// register all modules
 angular.module('gameori', [
     'ngRoute',
     'appRoutes',
-    'ReloadGamesService',
-    'FeaturingGamesService',
-    'DeletePostService',
-    'DeleteFeaturingService',
+    'gameService',
+    'indexService',
     'mainModule',
-    'deletePostModule',
-    'deleteFeaturingModule']);
+    'gameModule',
+    'indexModule']);

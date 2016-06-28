@@ -6,19 +6,19 @@
         <thead>
             <th>Game ID</th>
             <th>Game Title</th>
-            <th>Date</th>        
+            <th>Date</th>
         </thead>
         <tbody>
-            <tr ng-repeat="x in game">
-                <td>{{x.game_id}}</td>
-                <td>{{x.game_title}}</td>
-                <td>{{x.date}}</td>
+            <tr ng-repeat="game in games">
+                <td>{{game.game_id}}</td>
+                <td>{{game.game_title}}</td>
+                <td>{{game.date}}</td>
             </tr>
         </tbody>
     </table>
 </div>
 <div>
-    <h3>Banner</h3>
+    <h3>Banner Games</h3>
 </div>
 <div>
     <table class="table table-striped">
@@ -27,16 +27,16 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{featuring_games[0].banner.game_id_1}}</td>
+                <td>{{index_games[0].banner.game_id_1}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].banner.game_id_2}}</td>
+                <td>{{index_games[0].banner.game_id_2}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].banner.game_id_3}}</td>
+                <td>{{index_games[0].banner.game_id_3}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].banner.game_id_4}}</td>
+                <td>{{index_games[0].banner.game_id_4}}</td>
             </tr>
         </tbody>
     </table>
@@ -51,13 +51,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{featuring_games[0].featuring.game_id_1}}</td>
+                <td>{{index_games[0].featuring.game_id_1}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].featuring.game_id_2}}</td>
+                <td>{{index_games[0].featuring.game_id_2}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].featuring.game_id_3}}</td>
+                <td>{{index_games[0].featuring.game_id_3}}</td>
             </tr>
         </tbody>
     </table>
@@ -72,13 +72,13 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{featuring_games[0].popular.game_id_1}}</td>
+                <td>{{index_games[0].popular.game_id_1}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].popular.game_id_2}}</td>
+                <td>{{index_games[0].popular.game_id_2}}</td>
             </tr>
             <tr>
-                <td>{{featuring_games[0].popular.game_id_3}}</td>
+                <td>{{index_games[0].popular.game_id_3}}</td>
             </tr>
         </tbody>
     </table>

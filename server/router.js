@@ -1,10 +1,10 @@
-// controller declaration ============================================
-var singleGameController = require('./user/controllers/singleGameController');
-var GameCommentController = require('./user/controllers/GameCommentController');
-var loginController = require('./admin/controllers/loginController');
-var AdminGameController = require('./admin/controllers/GameController');
-var featuringGameController = require('./admin/controllers/featuringGameController');
-var util = require(__base + '/lib/util');
+// controller declaration =================================================
+var adminGameController       = require('./admin/controllers/gameController');
+var adminIndexController      = require('./admin/controllers/indexController');
+var adminLoginController      = require('./admin/controllers/loginController');
+var userGameCommentController = require('./user/controllers/gameCommentController');
+var userGameController        = require('./user/controllers/gameController');
+var userIndexController       = require('./user/controllers/indexController');
 var router;
 
 var auth = function(req, res, next) {
@@ -18,65 +18,50 @@ var auth = function(req, res, next) {
 router = function (app) {
     // admin page =========================================================
     app.get('/admin', auth, function (req, res) {
-        res.sendFile(__base + '/public/admin/views/index-rtl.html');
+        res.sendFile(__base + '/public/admin/views/base.html');
     });
     app.get('/admin/login', function (req, res) {
         res.sendFile(__base + '/public/admin/views/login.html');
     });
     app.post('/admin/enter', function (req, res) {
-        loginController.authenticate(req, res);
-    });
-    app.post('/test', function(req, res) {
-        util.uploadFile(req.files.displayImage.path, './public/user/res/test/test');
+        adminLoginController.authenticate(req, res);
     });
 
     // api ================================================================
-    app.get('/api/game/:game_id', function (req, res) {
-        singleGameController.getsingleGame(req.params.game_id,res);
+    app.get('/api/game/all', function (req, res) {
+        userGameController.getAllGames(req, res);
     });
-    app.get('/api/admin/game/all', function (req, res) {
-        AdminGameController.getAllGame(req,res);
+    app.get('/api/game/:game_id', function (req, res) {
+        userGameController.getSingleGame(req.params.game_id, res);
     });
     app.post('/api/admin/game/add', auth,function (req, res) {
-        AdminGameController.postGame(req,res);
+        adminGameController.postGame(req, res);
     });
-    app.delete('/api/admin/game/delete/:game_title', auth,function (req, res) {
-        AdminGameController.deleteGame(req.params.game_title,res);
+    app.delete('/api/admin/game/delete/:game_id', auth,function (req, res) {
+        adminGameController.deleteGame(req.params.game_id, res);
     });
-    app.get('/api/game/comment/:game_title', function (req, res) {
-        GameCommentController.getGameComment(req.params.game_title,res);
+
+    app.get('/api/game/comment/:game_id', function (req, res) {
+        userGameCommentController.getGameComment(req.params.game_id, res);
     });
-    app.post('/api/game/comment/', function (req, res) {
-        GameCommentController.postGameComment(req,res);
+    app.post('/api/game/comment/add', function (req, res) {
+        userGameCommentController.postGameComment(req,res);
     });
-    app.get('/api/game/:game_title/:game_comment', function (req, res) {
-        CommentGameController.GetGameComment(req.params.game_comment,res);
+
+    app.get('/api/index', function (req, res) {
+        userIndexController.getGames(req, res);
     });
-    app.get('/api/admin/game/featuring', function (req, res) {
-        featuringGameController.getFeaturingGame(req,res);
+    app.post('/api/admin/index/add', auth,function (req, res) {
+        adminIndexController.postGames(req, res);
     });
-    app.post('/api/admin/game/featuring/add', auth,function (req, res) {
-        featuringGameController.postFeaturingGame(req,res);
+    app.delete('/api/admin/index/delete', auth,function (req, res) {
+        adminIndexController.deleteGames(req, res);
     });
-    app.delete('/api/admin/game/featuring/delete', auth,function (req, res) {
-        featuringGameController.deleteFeaturingGame(req,res);
-    });
+
     // user page ==========================================================
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');
     });
-
-    // delete a todo
-    // app.delete('/api/todos/:todo_id', function (req, res) {
-    //     Todo.remove({
-    //         _id: req.params.todo_id
-    //     }, function (err, todo) {
-    //         if (err)
-    //             res.send(err);
-
-    //         getTodos(res);
-    //     });
-    // });
 };
 
 module.exports = router;

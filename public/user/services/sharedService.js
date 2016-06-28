@@ -1,5 +1,5 @@
 angular.module('sharedService', [])
-    .service('sharedGameID', function () {
+    .service('shared', function () {
         var gameID;
 
         return {

@@ -1,4 +1,6 @@
-var administratorModel = require('../models/administratorModel');
+'use strict'
+
+var administratorModel = require('../../models/administratorModel');
 var loginController;
 
 var authenticate = function (req, res){
@@ -26,7 +28,7 @@ var authenticate = function (req, res){
 }
 
 loginController = {
-    authenticate : authenticate
+    authenticate: authenticate
 };
 
 module.exports = loginController;
