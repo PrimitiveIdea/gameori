@@ -17,12 +17,13 @@ var getGameComment = function (req, res){
     });
 };
 var postGameComment = function (req, res){
-	comment = new gameCommentModel(
+	var comment = new gameCommentModel(
 	{
         'game_id': req.body.game_id,
-        'comment': req.body.comment,
-        'date'   : req.body.date,
-        'name'   : req.body.name
+        'name'   : req.body.name,
+        'email'  : req.body.email,
+        'subject': req.body.subject,
+        'comment': req.body.comment
 	});
 	comment.save();
 	res.send(200);

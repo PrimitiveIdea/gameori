@@ -7,6 +7,18 @@ var gameCommentSchema = new schema({
         type: String,
         default: ''
     },
+    name:{
+        type: String,
+        default: ''
+    },
+    email:{
+        type: String,
+        default: ''
+    },
+    subject:{
+        type: String,
+        default: ''
+    },
     comment: {
         type: String,
         default: ''
@@ -14,10 +26,6 @@ var gameCommentSchema = new schema({
     date:{
         type: Date,
         default: Date.now
-    },
-    name:{
-        type: String,
-        default: ''
     }
 });
 var gameCommentModel = mongoose.model('gamecomments', gameCommentSchema, 'gamecomments');

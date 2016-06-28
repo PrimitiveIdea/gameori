@@ -6,6 +6,7 @@ angular.module('gameori', [
 	'appRoutes',
     'customFilters',
     'gameService',
+    'gameCommentService',
     'indexService',
     'sharedService',
     'mainModule',

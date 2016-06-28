@@ -37,59 +37,35 @@
         </div>
 
         <div class="single-middle">
-            <h3>3 Comments</h3>
-            <div class="media">
+            <h3>{{ gameComments.length }} Comments</h3>
+            <div class="media" ng-repeat="gameComment in gameComments">
                 <div class="media-left">
-                    <a href="/#">
+                    <a href="mailto:{{gameComment.email}}">
                         <img class="media-object" src="./public/user/res/images/co.png" alt="">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading"><a href="/#">Richard Spark</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit .</p>
-                </div>
-            </div>
-            <div class="media in-media">
-                <div class="media-left">
-                    <a href="/#">
-                        <img class="media-object" src="./public/user/res/images/co.png" alt="">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading"><a href="/#">Joseph Goh</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit .</p>
-                </div>
-            </div>
-            <div class="media">
-                <div class="media-left">
-                    <a href="/#">
-                        <img class="media-object" src="./public/user/res/images/co.png" alt="">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading"><a href="/#">Melinda Dee</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit .</p>
+                    <h4 class="media-heading"><a href="mailto:{{gameComment.email}}">{{ gameComment.name }}</a></h4>
+                    <p>{{ gameComment.comment }}</p>
                 </div>
             </div>
         </div>
 
         <div class="single-bottom">
             <h3>Leave A Comment</h3>
-            <form>
+            <form role="form" action="/api/game/comment/add" method="post">
+                <input type="hidden" name="game_id" value="{{ game.game_id }}">
                 <div class="col-md-4 comment">
-                    <input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+                    <input type="text" name="name" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
                 </div>
                 <div class="col-md-4 comment">
-                    <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+                    <input type="text" name="email" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
                 </div>
                 <div class="col-md-4 comment">
-                    <input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+                    <input type="text" name="subject" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
                 </div>
                 <div class="clearfix"> </div>
-                <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+                <textarea name="comment" cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
                 <input type="submit" value="Send" >
             </form>
         </div>
