@@ -3,6 +3,8 @@ angular.module('gameori', [
     'appRoutes',
     'gameService',
     'indexService',
+    'logoutService',
     'mainModule',
     'gameModule',
-    'indexModule']);
+    'indexModule',
+    'logoutModule']);
