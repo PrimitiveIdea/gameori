@@ -32,8 +32,8 @@ router = function (app) {
     });
 
     // api ================================================================
-    app.get('/api/aws', function (req, res) {
-        awsController.getData(req, res);
+    app.get('/api/aws/:game_id', function (req, res) {
+        awsController.getData(req.params.game_id, res);
     });
 
     app.get('/api/game/all/:limit/:skip', function (req, res) {
@@ -64,6 +64,9 @@ router = function (app) {
     });
     app.delete('/api/admin/index/delete', auth,function (req, res) {
         adminIndexController.deleteGames(req, res);
+    });
+    app.post('/api/admin/logout', auth,function (req, res) {
+        adminLoginController.logout(req, res);
     });
 
     // user page ==========================================================

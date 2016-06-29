@@ -25,10 +25,14 @@ var authenticate = function (req, res){
             }
         });
     }
-}
-
+};
+var logout = function (req, res){
+    req.session.destroy();
+    res.redirect('/admin/login');
+};
 loginController = {
-    authenticate: authenticate
+    authenticate: authenticate,
+    logout: logout
 };
 
 module.exports = loginController;

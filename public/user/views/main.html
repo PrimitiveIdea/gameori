@@ -116,7 +116,8 @@
                         <img class="img-responsive " src="{{ latest_game.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
+                        <span>{{ latest_game.date | ISODateToDate | date: 'dd'}}</span>
+                        <span>{{ latest_game.date | ISODateToDate | date: 'MMM'}}</span>
                         <p><a href ng-click="linkToGame(latest_game.game_id)">{{ latest_game.tag }}</a></p>
                         <a class="comment" href ng-click="linkToGame(latest_game.game_id)"><i> </i> 0 Comments</a>
                     </div>
@@ -149,35 +150,32 @@
             <div class="col-md-4 latest">
                 <h4>Featured</h4>
                 <div class="late">
-                    <a href="/game" class="fashion">
+                    <a href ng-click="linkToGame(featuring1.game_id) class="fashion">
                         <img class="img-responsive " src="{{ featuring1.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/game"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/game"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(featuring1.game_id)"> {{ featuring1.tag}} </a></p>
+                        <a class="comment" href ng-click="linkToGame(featuring1.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="late">
-                    <a href="/game" class="fashion">
+                    <a href ng-click="linkToGame(featuring2.game_id) class="fashion">
                         <img class="img-responsive " src="{{ featuring2.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/game"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/game"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(featuring2.game_id)"> {{ featuring2.tag}} </a></p>
+                        <a class="comment" href ng-click="linkToGame(featuring2.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="late">
-                    <a href="/game" class="fashion">
+                    <a href ng-click="linkToGame(featuring3.game_id) class="fashion">
                         <img class="img-responsive " src="{{ featuring3.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/game"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/game"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(featuring3.game_id)"> {{ featuring3.tag}} </a></p>
+                        <a class="comment" href ng-click="linkToGame(featuring3.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -186,35 +184,32 @@
             <div class="col-md-4 latest">
                 <h4>Popular</h4>
                 <div class="late">
-                    <a href="/game" class="fashion">
+                    <a href ng-click="linkToGame(popular1.game_id) class="fashion">
                         <img class="img-responsive " src="{{ popular1.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/game"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/game"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(popular1.game_id)"> {{ popular1.tag}} </a></p>
+                        <a class="comment" href ng-click="linkToGame(popular1.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="late">
-                    <a href="/game" class="fashion">
+                    <a href ng-click="linkToGame(popular2.game_id) class="fashion">
                         <img class="img-responsive " src="{{ popular2.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/game"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/game"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(popular1.game_id)"> {{ popular2.tag}} </a></p>
+                        <a class="comment" href ng-click="linkToGame(popular2.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="late">
-                    <a href="/game" class="fashion">
+                    <a href ng-click="linkToGame(popular1.game_id) class="fashion">
                         <img class="img-responsive " src="{{ popular3.images.image_icon }}" alt="">
                     </a>
                     <div class="grid-product">
-                        <span>6 Apr, 2015</span>
-                        <p><a href="/game"> Ipsum dolor sit amet, consectetuer adipiscing elit,it has roots </a></p>
-                        <a class="comment" href="/game"><i> </i> 0 Comments</a>
+                        <p><a href ng-click="linkToGame(popular3.game_id)"> {{ popular3.tag}} </a></p>
+                        <a class="comment" href ng-click="linkToGame(popular3.game_id)"><i> </i> 0 Comments</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>

@@ -1630,3 +1630,8 @@ ul.grid-part
         padding: 0;
     }
 }
+
+.amazon-button, .lowestprice{
+    font-size: 20px;
+    color: red;
+}

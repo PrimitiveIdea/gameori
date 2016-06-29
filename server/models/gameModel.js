@@ -15,10 +15,6 @@ var gameSchema = new schema({
         type: String,
         default: ''
     },
-    amazon_link: {
-    	type: String,
-    	default: ''
-    },
     date: {
     	type: Date,
     	default: Date.now

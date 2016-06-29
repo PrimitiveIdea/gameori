@@ -8,6 +8,7 @@ angular.module('gameori', [
     'gameService',
     'gameCommentService',
     'indexService',
+    'amazonService',
     'sharedService',
     'mainModule',
     'gamesModule',

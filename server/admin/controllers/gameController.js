@@ -25,7 +25,6 @@ var postGame = function (req, res){
         'game_title' : req.body.game_title,
         'description': req.body.description,
         'tag'        : req.body.tag,
-        'amazon_link': req.body.amazon_link,
         'images'     : {
             'image_icon'  : image_icon,
             'image_thumb' : image_thumb,
