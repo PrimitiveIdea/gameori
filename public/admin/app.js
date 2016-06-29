@@ -6,5 +6,4 @@ angular.module('gameori', [
     'logoutService',
     'mainModule',
     'gameModule',
-    'indexModule',
-    'logoutModule']);
+    'indexModule']);

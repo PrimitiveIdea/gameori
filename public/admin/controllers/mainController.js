@@ -1,6 +1,6 @@
 angular.module('mainModule', [])
-	.controller('mainController', ['$scope','$http','game','index',
-		function($scope, $http, game, index) {
+	.controller('mainController', ['$scope','$http','$location','game','index','logout',
+		function($scope, $http, $location, game, index, logout) {
 
 		game.cget()
 			.success(function(data){
@@ -11,4 +11,12 @@ angular.module('mainModule', [])
 			.success(function(data){
 				$scope.index_games = data;
 			});
+
+		$scope.logout = function() {
+            logout.post()
+                .success(function(data) {
+                    $location.path('/admin/login');
+                    location.reload();
+                });
+        };
 	}]);

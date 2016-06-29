@@ -30,6 +30,9 @@ router = function (app) {
     app.post('/admin/enter', function (req, res) {
         adminLoginController.authenticate(req, res);
     });
+    app.post('/admin/logout', auth,function (req, res) {
+        adminLoginController.logout(req, res);
+    });
 
     // api ================================================================
     app.get('/api/aws/:game_id', function (req, res) {
@@ -64,9 +67,6 @@ router = function (app) {
     });
     app.delete('/api/admin/index/delete', auth,function (req, res) {
         adminIndexController.deleteGames(req, res);
-    });
-    app.post('/api/admin/logout', auth,function (req, res) {
-        adminLoginController.logout(req, res);
     });
 
     // user page ==========================================================

@@ -12,7 +12,7 @@
                     <a class="fast" href="/#">{{ game.game_title }}</a>
                     <p>Posted by <a href="/#">Admin</a> | <a href="/#">{{ gameComments.length }} Comments</a></p>
                     <p class="sed">{{ game.description }}</p>
-                    <div class="col-md-6 md-in">
+                    <!-- <div class="col-md-6 md-in">
                         <ul class="grid-part">
                             <li><a href="/#"><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
                             <li><a href="/#"><i class="sign"> </i>Lorem ipsum dolor sit amet,  </a></li>
@@ -29,12 +29,12 @@
                             <li><a href="/#"><i class="sign"> </i>Lorem ipsum dolor sit amet,  </a></li>
                             <li><a href="/#"><i class="sign"> </i>Sed ut perspiciatis unde omnis</a></li>
                         </ul>
+                    </div> -->
+                    <div>
+                        <a ng-href="{{ gameLink }}"><button class="btn btn-info amazon-button">Buy On Amazon!</button></a>
+                        <span>Start Price from : <span class="lowestprice">{{ lowestPrice }}</span></span>
                     </div>
                     <div class="clearfix"> </div>
-                </div>
-                <div>
-                    <a ng-href="{{ gameLink }}"><button class="btn btn-info amazon-button">Buy On Amazon!</button></a>
-                    <span>Start Price from : <span class="lowestprice">{{ lowestPrice }}</span></span>
                 </div>
                 <div class="clearfix"> </div>
             </div>

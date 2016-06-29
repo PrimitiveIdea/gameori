@@ -20,9 +20,5 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: '../../public/admin/views/deleteindex.html',
             controller: 'indexController'
         })
-        .when('/admin/logout', {
-            templateUrl: '../../public/admin/views/main.html',
-            controller: 'logoutController'
-        })
     $locationProvider.html5Mode(true);
 }]);

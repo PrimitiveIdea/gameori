@@ -27,7 +27,6 @@
 <script src="./public/admin/controllers/gameController.js"></script>
 <script src="./public/admin/controllers/indexController.js"></script>
 <script src="./public/admin/controllers/mainController.js"></script>
-<script src="./public/admin/controllers/logoutController.js"></script>
 <script src="./public/admin/router.js"></script>
 <script src="./public/admin/app.js"></script>
 <script src="./public/admin/res/js/modernizr.custom.js"></script>
@@ -76,7 +75,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/admin/logout">Logout</a>
+                        <a href ng-click="logout()">Logout</a>
                     </li>
                 </ul>
             </div>
