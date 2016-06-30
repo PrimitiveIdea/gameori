@@ -13,6 +13,7 @@ Gameori aims to review the latest games and at the same time promoting the produ
 
 ```
 $ [sudo] npm install -g bower
+$ [sudo] npm install -g nodemon
 ```
 
 ## Additional Packages
