@@ -57,20 +57,19 @@
 
         <div class="single-bottom">
             <h3>Leave A Comment</h3>
-            <form role="form" action="/api/game/comment/add" method="post">
-                <input type="hidden" name="game_id" value="{{ game.game_id }}">
+            <form role="form">
                 <div class="col-md-4 comment">
-                    <input type="text" name="name" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+                    <input type="text" name="name" ng-model="comment_name" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
                 </div>
                 <div class="col-md-4 comment">
-                    <input type="text" name="email" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+                    <input type="text" name="email" ng-model="comment_email" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
                 </div>
                 <div class="col-md-4 comment">
-                    <input type="text" name="subject" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+                    <input type="text" name="subject" ng-model="comment_subject" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
                 </div>
                 <div class="clearfix"> </div>
-                <textarea name="comment" cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-                <input type="submit" value="Send" >
+                <textarea name="comment" ng-model="comment_comment" cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+                <input type="submit" ng-click="postComment()" value="Send" >
             </form>
         </div>
     </div>
