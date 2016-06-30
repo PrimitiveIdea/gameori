@@ -60,3 +60,4 @@ $ [sudo] npm install -g nodemon
 ## Templates
 1. [SB Admin](http://startbootstrap.com/template-overviews/sb-admin)
 2. [Games Center - W3Layouts](https://w3layouts.com/games-center-a-games-category-flat-bootstrap-responsive-web-template)
+3. [Simple Login Form](https://colorlib.com/wp/html5-and-css3-login-forms)
