@@ -21,7 +21,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
         .when('/contact', {
             templateUrl: './public/user/views/contact.html',
-            controller: 'mainController'
+            controller: 'contactController'
         })
         .when('/404', {
             templateUrl: './public/user/views/404.html',

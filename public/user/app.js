@@ -10,6 +10,8 @@ angular.module('gameori', [
     'indexService',
     'amazonService',
     'sharedService',
+    'ContactService',
     'mainModule',
     'gamesModule',
-    'gameModule']);
+    'gameModule',
+    'contactModule']);

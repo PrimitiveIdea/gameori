@@ -6,17 +6,18 @@
 			<div class="contact-form">
 				
 				<div class="col-md-8 contact-grid">
-					<form>	
-						<input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+					<form role="form">	
+						<input type="text" value="Name" ng-model="contact_name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 					
-						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
-						<input type="text" value="Subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
+						<input type="text" value="Email" ng-model="contact_email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+						<input type="text" value="Subject" ng-model="contact_subject" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Subject';}">
 						
-						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+						<textarea cols="77" rows="6" value=" " ng-model="contact_message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
 						<div class="send">
-							<input type="submit" value="Send" >
+							<input type="submit" value="Send" ng-click="postContact()">
 						</div>
 					</form>
+					<div class="status">{{ status }}</div>
 				</div>
 				<div class="col-md-4 contact-in">
 

@@ -1635,3 +1635,11 @@ ul.grid-part
     font-size: 20px;
     color: red;
 }
+.status{
+    color:white;
+    margin:10px 0;
+    font-size:20px;
+    text-align: center;
+    width:100%;
+    background:#8fbf00;
+}

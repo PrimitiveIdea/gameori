@@ -8,6 +8,7 @@ var adminLoginController      = require('./admin/controllers/loginController');
 var userGameCommentController = require('./user/controllers/gameCommentController');
 var userGameController        = require('./user/controllers/gameController');
 var userIndexController       = require('./user/controllers/indexController');
+var userContactController       = require('./user/controllers/contactController');
 var util = require(__base + '/lib/util');
 var router;
 
@@ -69,6 +70,9 @@ router = function (app) {
         adminIndexController.deleteGames(req, res);
     });
 
+    app.post('/api/contact/add',function (req, res) {
+        userContactController.postContact(req, res);
+    });
     // user page ==========================================================
     app.get('*', function (req, res) {
         res.sendFile(__base + '/public/user/views/base.html');

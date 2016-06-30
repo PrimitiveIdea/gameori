@@ -6,7 +6,6 @@ var awsController;
 
 var getData = function(req, res) {
     var keywords = req;
-
     var awsId=     AWSConfig.access_key,
         awsSecret= AWSConfig.secret_access_key,
         assocId=   AWSConfig.associate_id;
