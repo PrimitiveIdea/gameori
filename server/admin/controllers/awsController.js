@@ -1,29 +1,26 @@
 'use strict'
-var OperationHelper = require('apac').OperationHelper;
+var aws = require('aws-lib');
 var util = require(__base + '/lib/util');
 var AWSConfig = util.loadAWSConfig();
 var awsController;
 
 var getData = function(req, res) {
     var keywords = req;
-    var opHelper = new OperationHelper({
-        awsId:     AWSConfig.access_key,
-        awsSecret: AWSConfig.secret_access_key,
-        assocId:   AWSConfig.associate_id
-    });
-    opHelper.execute('ItemSearch', {
-      'SearchIndex': 'VideoGames',
-      'Keywords': keywords,
-      'ResponseGroup': 'ItemAttributes,Offers'
-    }).then((response) => {
+
+    var awsId=     AWSConfig.access_key,
+        awsSecret= AWSConfig.secret_access_key,
+        assocId=   AWSConfig.associate_id;
+    var prodAdv = aws.createProdAdvClient(awsId,awsSecret,assocId);
+    var options = {SearchIndex:"VideoGames", Keywords:keywords,'ResponseGroup': 'ItemAttributes,Offers'};
+
+    prodAdv.call("ItemSearch", options, function(err,result){
         var obj = {
-            'link' : response.result.ItemSearchResponse.Items.Item[0].DetailPageURL,
-            'lowestPrice' : response.result.ItemSearchResponse.Items.Item[0].OfferSummary.LowestNewPrice.FormattedPrice
+            'link' : result.Items.Item[0].DetailPageURL,
+            'lowestPrice' : result.Items.Item[0].OfferSummary.LowestNewPrice.FormattedPrice
         };
-        res.json(obj);
-    }).catch((err) => {
-        console.error("Something went wrong! ", err);
+        res.send(obj);
     });
+    
 };
 
 awsController = {
