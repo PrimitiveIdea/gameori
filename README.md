@@ -13,6 +13,11 @@ Gameori aims to review the latest games and at the same time promoting the produ
 
 ```
 $ [sudo] npm install -g bower
+```
+
+* Nodemon - Utility that will monitor for any changes in your source and automatically restart your server.
+
+```
 $ [sudo] npm install -g nodemon
 ```
 
@@ -21,7 +26,6 @@ $ [sudo] npm install -g nodemon
 * Connect-Multiparty - Defined as npm module in the [package.json](package.json) file.
 * Express - Defined as npm module in the [package.json](package.json) file.
 * Mongoose - Defined as npm module in the [package.json](package.json) file.
-* Nodemon - Defined as npm module in the [package.json](package.json) file.
 * Path - Defined as npm module in the [package.json](package.json) file.
 * AngularJS - Defined as bower module in the [bower.json](bower.json) file.
 * Bootstrap - Defined as bower module in the [bower.json](bower.json) file.
