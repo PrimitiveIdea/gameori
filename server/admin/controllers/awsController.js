@@ -13,13 +13,19 @@ var getData = function(req, res) {
     var options = {SearchIndex:"VideoGames", Keywords:keywords,'ResponseGroup': 'ItemAttributes,Offers'};
 
     prodAdv.call("ItemSearch", options, function(err,result){
-        var obj = {
-            'link' : result.Items.Item[0].DetailPageURL,
-            'lowestPrice' : result.Items.Item[0].OfferSummary.LowestNewPrice.FormattedPrice
-        };
+        if (Array.isArray(result.Items.Item)) {
+            var obj = {
+                'link' : result.Items.Item[0].DetailPageURL,
+                'lowestPrice' : result.Items.Item[0].OfferSummary.LowestNewPrice.FormattedPrice
+            };
+        } else {
+            var obj = {
+                'link' : result.Items.Item.DetailPageURL,
+                'lowestPrice' : result.Items.Item.OfferSummary.LowestNewPrice.FormattedPrice
+            };
+        }
         res.send(obj);
     });
-    
 };
 
 awsController = {

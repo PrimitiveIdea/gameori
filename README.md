@@ -32,6 +32,17 @@ $ [sudo] npm install -g nodemon
 * Font Awesome - Defined as bower module in the [bower.json](bower.json) file.
 * JQuerry - Defined as bower module in the [bower.json](bower.json) file.
 
+## Import Database
+  1. mongodump
+  ```
+  mongorestore -d gameori database/mongodump/
+  ```
+
+  2. rockmongo
+  ```
+  install rockmongo and import collection (JS File)
+  ```
+
 ## Quick Install
   Install dependencies:
 
